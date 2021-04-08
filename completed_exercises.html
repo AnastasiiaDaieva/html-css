@@ -5,8 +5,527 @@
 <!--The commentary answers the question "Why is this part of the code written".-->
 
 <!--Задание Напиши в теге img два обязательных и два необязательных атрибута.-->
-<img src="photo.jpg" 
-    alt="Image example" 
-    width="200" 
-    height="150"
-    >
+<img src="photo.jpg" alt="Image example" width="200" height="150" />
+
+<!--Задание Используя теги ul и li перечисли 3 основные веб технологии. Порядок текста должен быть сохранен.-->
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+
+<!--Задание
+Оберни строчные теги button контейнером div с классом buttons так, чтобы в двух рядах было по три кнопки и каждый ряд начинался с новой строки.
+
+Порядок элементов button должен быть сохранен.-->
+
+<div class="buttons">
+  <button type="button" class="button">inline</button>
+  <button type="button" class="button">block</button>
+  <button type="button" class="button">inline-block</button>
+</div>
+<div class="buttons">
+  <button type="button" class="button">HTML</button>
+  <button type="button" class="button">CSS</button>
+  <button type="button" class="button">JavaScript</button>
+</div>
+
+<!--Задание
+В исходном коде присутсвует две ссылки с одним и тем же контентом - строкой Текст.
+
+У ссылок имеются названия классов - link-inline и link-block.
+
+Для первой ссылки (с классом link-inline): оберни контент ссылки - строку Текст строчным тегом span .
+
+Для второй ссылки (с классом link-block): оберни контент ссылки - строку Текст блочным тегом p для второй ссылки.
+
+Визуально убедись, что к каждой из ссылок применилось свойство inline или block.
+
+Порядок элементов a должен быть сохранен.-->
+
+<div class="box">
+  <a href="#" class="link-inline"><span>Text</span></a>
+  without line break
+</div>
+<div class="box">
+  <a href="#" class="link-block">
+    <p>Text</p>
+  </a>
+  with line break
+</div>
+
+<!--Задание
+Исправьте порядок нумерации удалив атрибут тега ol.
+Расставь элементы li в нужном порядке согласно описанию последовательности загрузки Номер 1 должен соответствовать первому файлу, который будет загружен. Номер 2 - второму, номер 3 - третьему.-->
+
+<div class="card">
+  <h4 class="card-title">The order in which files are loaded by the browser</h4>
+  <ol class="card-items">
+    <li class="card-item">HTML file</li>
+    <li class="card-item">Link to files inside head</li>
+    <li class="card-item">Link to files inside body</li>
+  </ol>
+</div>
+
+<!--Задание
+Сгруппируй наборы тегов с помощью списка ul и элементов li.
+Тег ul должен иметь класс со значением (существительное во множественном числе) cards.
+Тег li должен иметь класс со значением (существительное в единственном числе) card.-->
+
+<ul class="cards">
+  <li class="card">
+    <h4 class="card-title">Card title 1</h4>
+    <div class="wrp-img">
+      <img class="card-image" src="photo.jpg" alt="image description" />
+    </div>
+    <p class="card-description">Description of the topic 1</p>
+  </li>
+  <li class="card">
+    <h4 class="card-title">Card title 2</h4>
+    <div class="wrp-img">
+      <img class="card-image" src="photo2.jpg" alt="image description" />
+    </div>
+    <p class="card-description">Description of the topic 2</p>
+  </li>
+  <li class="card">
+    <h4 class="card-title">Card title 3</h4>
+    <div class="wrp-img">
+      <img class="card-image" src="photo3.jpg" alt="image description" />
+    </div>
+    <p class="card-description">Description of the topic 3</p>
+  </li>
+</ul>
+
+<!--Задание
+Ссылка должна открыться в новой вкладке. В целях безопасности надо разорвать связь между новой вкладкой и той вкладкой, где расположена ссылка.
+
+Для этого добавь ссылке необходимые значения атрибутов target и rel.-->
+
+<a
+  href="https://goit.global"
+  target="_blank"
+  rel="noopener noreferrer nofollow"
+>
+  GoIT
+</a>
+
+<!--Задание
+Добавь ссылке атрибут, необходимый для скачивания файла-->
+
+<a href="resume.pdf" download>Resume</a>
+
+<!--Задание
+Добавь ссылкам специальные значения href.-->
+
+<!-- Link to phone number  -->
+<a href="tel:+14251234563">+1 (425) 123-45-63</a>
+<!-- Link to e-mail address -->
+<a href="mailto:example@gmail.com">example@gmail.com</a>
+
+<!--Задание
+Расставь значения атрибутов id для навигации по странице с помощью ссылок из aside.-->
+
+<header id="top">
+  <!-- content from logo, nav, search  -->
+</header>
+<main>
+  <aside>
+    <ul>
+      <li><a href="#top">Top of the page</a></li>
+      <li><a href="#page-theme">Main theme</a></li>
+      <li><a href="#bottom">Footer of the page</a></li>
+    </ul>
+  </aside>
+  <article id="page-theme">
+    <!-- main page theme -->
+  </article>
+</main>
+<footer id="bottom">
+  <!-- content from logo, nav, contacts, copyright  -->
+</footer>
+
+<!--Задание
+Размести теги внутри тега figure и контент внутри тега figcaption.-->
+
+<figure>
+  <img src="photo.jpg" alt="photo description" />
+  <figcaption>
+    Only one img element and any number of text or other elements can be used
+    inside link. You cannot use interactive elements inside link tag.
+  </figcaption>
+</figure>
+
+<!--Задание
+Два изображения должны быть ссылкой на одну и ту же страницу. Разместите теги правильно. Допускается добавление только одного элемента - еще одной ссылки.-->
+
+<a href="./about">
+  <img src="photo.jpg" alt="note in laptop" />
+</a>
+<a href="./about">
+  <img src="photo2.jpg" alt="note on paper" />
+</a>
+
+<!--Задание
+Текст в комментарии содержит описание структуры файлов и папок (директорий) для размещения на github.
+
+Чтобы проект отобразился как веб-страница веб-сервер github должен найти файл index.html и выполнить его. Т.е. нужен файл в которого произойдет запуск приложения (точка входа в приложение).
+
+Замени название файла hw.html, чтобы приложение начало выполняться с чтения именно этого файла.
+NOTE FOR SASHA: blank lines do not let complete the task-->
+
+<!--  TODO 
+* create project with the following structure:
+images/logo.svg
+css/style.css
+about.html
+index.html
+ -->
+
+<!--Задание
+Файл about.html расположен в директории pages относительно файла index.html. Напиши для этого файла
+
+путь для ссылки на файл index.html из файла about.html,
+путь для изображения на файл logo.png
+NOTE FOR SASHA: unclear whether we are in the same folder when trying to see the logo-->
+
+<!-- file about.html-->
+<a href="../index.html">
+  <img src="../images/logo.png" alt="logo" />
+</a>
+
+<!--Задание
+Есть структура файлов и папок (директорий)
+
+images/logo.png
+pages/about.html
+index.html
+Есть код, который работает в widows, но не будет работать в linux. Исправь регистр букв в атрибутах href и src
+NOTE FOR SASHA: widows in task #17-->
+
+<!-- file about.html -->
+<a href="../index.html">
+  <img src="../images/logo.png" alt="logo" />
+</a>
+
+<!--BLOCK II. Задание
+В редакторе html находится текст, состоящий из пар 'название' и 'описание'.
+
+Оформите этот текст в виде списка с помощью тегов dl, dt и dd.NOTE FOR SASHA: sub and sub doesn't submit because of the Russian 'and' between them-->
+
+<dl>
+  <dt>Tag span.</dt>
+  <dd>A universal container for text content.</dd>
+  <dt>Tag pre.</dt>
+  <dd>Preservation of spaces and hyphens.</dd>
+  <dt>Tag sup and sub.</dt>
+  <dd>Displays characters in superscript and subscript.</dd>
+  <dt>Tag strong.</dt>
+  <dd>Highlighting an important word or a whole phrase within the text.</dd>
+  <dt>Tag b.</dt>
+  <dd>Visual highlighting of text with a thicker font.</dd>
+  <dt>Tag em.</dt>
+  <dd>Semantically and visually (italic) emphasizes the text.</dd>
+  <dt>Tag i.</dt>
+  <dd>Visually (italic) emphasizes the text.</dd>
+  <dt>Tag address.</dt>
+  <dd>Wraps tags with content about an address or recipient.</dd>
+</dl>
+
+<!--Задание
+Добавьте тегу time атрибут datetime со значением полночь на 01 января 1970 года в формате 1970-01-01T00:00-->
+
+<p>
+  Epoch of Unix time started at
+  <time datetime="1970-01-01T00:00"> 00:00:00 UTC on 1 January 1970</time>
+</p>
+
+<!--Задание
+В элемент span добавьте контент - символьную подстановку для registered sign. NOTE FOR SASHA: Используйте для поиска в ??? ключевые слова:-->
+
+<span>&#174;</span>
+
+<!--Задание
+Добавьте атрибуты controls, preload="none" для тега audio
+Добавьте атрибуты src="https://goit.ua/autocheck/bensound-summer.mp3" и type="audio/mp3" для тега source.-->
+
+<audio controls preload="none">
+  <source
+    src="https://goit.ua/autocheck/bensound-summer.mp3"
+    type="audio/mp3"
+  />
+</audio>
+
+<!--Задание
+Сверстай таблицу по ее изображению с помощью тегов и атрибута colspan. Подняться к таблице.-->
+
+<table>
+  <caption>
+    What is the difference between block, inline and inline-block
+  </caption>
+  <thead>
+    <tr>
+      <th>/</th>
+      <th>block</th>
+      <th>inline</th>
+      <th>inline-block</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>height determined</th>
+      <td colspan="3">by height of content</td>
+    </tr>
+    <tr>
+      <th>width determined</th>
+      <td>by width of parent element</td>
+      <td colspan="2">by width of content</td>
+    </tr>
+    <tr>
+      <th>Is it possible to set height and width</th>
+      <td>yes</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>How line wrapping works</th>
+      <td>always on a new line</td>
+      <td colspan="2">only when filling the width of the parent element</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--Задание
+Напишите элемент link для подключения внешнего файла
+
+который ищет внешний файл с помощью атрибута href по относительному пути css/styles.css;
+содержит атрибут rel со значением stylesheet.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body></body>
+</html>
+
+<!--Задание
+Для селектора p задайте свойство color и значение red, свойство font-size и значение 20px;-->
+p { color: red; font-size: 20px; }
+
+<!--Задание
+Для селектора * (любой элемент) задай свойство margin и значение 0, свойство padding и значение 0;-->
+* { margin: 0; padding: 0; }
+
+<!--Задание
+Для тега li отмени свойство  list-style с помощью значения none. Задай свойству color значение green; Убедись на примере изменения цвета текста, что у тега более высокий приоритет, чем у *.-->
+
+* { color: red; } li { list-style: none; color: green; }
+
+<!--Задание
+Для класса rule задай свойство  list-style и значение upper-roman, свойство color и значение navy;
+Убедись на примере появления римской нумерации и изменения цвета текста, что у класса более высокий приоритет, чем у тега.-->
+
+li { list-style: none; color: green; } .rule { list-style: upper-roman; color:
+navy; }
+
+<!--Задание
+Двум элементам с классом common-rule добавлены классы first-rule и last-rule, т.е. создана композиция с классом common-rule.
+Добавьте CSS правила для класса first-rule и last-rule под текстом с правилом для класса common-rule (почему именно такое расположение будет рассмотрено позже).
+Для класса first-rule добавьте свойство color и значение red.
+Для класса last-rule добавьте свойство color и значение green.-->
+
+.common-rule { list-style: upper-roman; font-size: 20px; } .first-rule { color:
+red; } .last-rule { color: green; }
+
+<!--Задание
+В CSS добавь класс active к селекторам button и link так, чтобы
+
+правило color: red применилось только к элементу button, содержащему одновременно класс btn и active;
+правило font-weight: 700 применилось только к элементу a, содержащему одновременно класс link и active.-->
+
+.btn { border: none; padding: .25rem 1.25rem; } .link { text-decoration: none;
+color: navy; } /* Напиши свой код под этой строкой */ .btn.active { color: red;
+} .link.active { font-weight: 700; }
+
+<!--Задание
+Добавь псевдокласс :hover и :focus так, чтобы для класса link применялось свойство opacity: 1 при наведении курсора или получения фокуса с помощью клавиши tab-->
+.link { text-decoration: none; color: navy; opacity: 0.5; } /* Напиши свой код
+под этой строкой */ .link:hover, .link:focus { opacity: 1; }
+
+<!--Задание
+Для селектора в виде атрибута [type] задай свойство color со значением white.
+Повышаем специфичность. Для селектора в виде тега button и атрибута [type="reset"] задай свойство color со значением green-->
+[type] { color: white; } button[type="reset"] { color: green; }
+
+<!--Задание
+Для ссылок с атрибутом href, значение которых начинается с ./ задай цвет текста red.
+Для ссылок с атрибутом href, значение которых начинается с https задай цвет текста navy.
+Специфичность селекторов должна быть минимальной.-->
+
+.link { text-decoration: none; } [href^="./"] { color: red; } [href^="https"] {
+color: navy; }
+
+<!--Задание
+Для атрибутов, заканчивающихся на html задай цвет текста green.
+Для атрибутов, заканчивающихся на css задай цвет текста orangered.
+Специфичность селекторов должна быть минимальной.-->
+
+.link { text-decoration: none; } [href$="html"] { color: green; } [href$="css"]
+{ color: orangered; }
+
+<!--Задание
+Для атрибутов, содержащих about задай цвет текста green.
+Для атрибутов, содержащих com задай цвет текста orangered.
+Специфичность селекторов должна быть минимальной.-->
+
+.link { text-decoration: none; } [href*="about"] { color: green; } [href*="com"]
+{ color: orangered; }
+
+<!--Задание
+Добавь CSS правило с id селектором sending со свойством background-color и значением teal, со свойством color и значением white.
+
+Обрати внимание на то что у id более высокий приоритет, чем у класса.-->
+.warning { background-color: white; color: red; } #sending { background-color:
+teal; color: white; }
+
+<!--Задание
+Задайте элементу div инлайн стили CSS со свойством background-color и значением orange, со свойством color и значением navy.
+
+Обратите внимание на более высокий приоритет у инлайн-стилей по сравнению с классом и id.-->
+
+<div class="warning" id="inline" style="background-color: orange; color: navy">
+  Инлайн стили нежелательно использовать из-за более высокого приоритета чем у
+  id, а также из-за сложности c поддержкой и переиспользованем кода.
+</div>
+
+<!--Задание
+Добавь !important обеим значениям свойств селектора div.
+
+Обрати внимание на то что у div приоритет изменился и стал более высоким чем у инлайн.-->
+
+div { background-color: navy!important; color: white !important; } .warning {
+background-color: white; color: red; } #inline { background-color: red; color:
+white; }
+
+<!--Задание
+Добавь к селектору menu-item еще один класс menu так, чтобы оба свойства display и vertical-align применились только к прямым потомкам класса menu, но не к потомкам sub-menu.-->
+
+ul { padding: 0; list-style: none; } .menu>.menu-item { display: inline-block;
+vertical-align: top; }
+
+<!--Задание
+В html коде дано меню, которое содержит два подменю, вложенных одно в другое. В css кода все подменю с классом sub-menu скрыты с помощью свойства opacity. Необходимо разместить элементы li списка с классом menu по горизонтали, а li списков с классом sub-menu должны остаться в вертикальном положении. Также при наведении курсором на элемент li должно показываться скрытое меню.
+
+Для этого
+
+Добавь к селектору menu все элементы с селектором класса menu-item, которые являются первыми потомками списка с классом menu.
+Добавь к селектору sub-menu все элементы с селектором класса menu-item, которые являются потомками списка с классом sub-menu на любом уровне вложенности.
+Добавь к селектору menu-item:hover все элементы, которые являются потомками элемента с классом menu-item на любом уровне вложенности.
+Обрати внимание на поведение элементов меню при hover до и после успешного выполнения задания.-->
+
+ul { padding: 0; list-style: none; } .menu>.menu-item { display: inline-block;
+vertical-align: top; opacity: 1; } .sub-menu .menu-item { opacity: 0;
+margin-left: 100px; } .menu-item:hover .menu-item { opacity: 1; }
+
+<!--Задание
+Добавь к селектору item-1 еще один класс item так, чтобы свойство color: red применилось только к первому соседу - элементу с классом item-2-->
+.item-1+.item { color: red; }
+
+<!--Задание
+Добавь к селектору item-2 еще один класс item так, чтобы свойство color со значением red применилось ко всем нижним соседям этого элемента.
+
+Т.е. правило должно примениться к элементам с классом item-3 и item-4.
+
+Ни к каким другим элементам color: red больше применяться не должно.-->
+.item-2~.item { color: red; }
+
+<!--Задание
+Не меняя селекторы и правила CSS сделай так, чтобы цвет текста всех элементов стал maroon (перемести CSS правила).-->
+.headline.title{ color: navy; } .title[title] { color: maroon; }
+
+<!--Задание
+В коде html есть элемент ul с классом cards и есть последний элемент li с классом last-of-type. С помощью наследования нужно изменить цвет текста для элементов-потомков этих двух элементов. Для этого необходимо:
+
+селектору класса cards задать цвет текста navy;
+селектору класса last-of-type задать цвет текста firebrick.-->
+.cards { color: navy; } .last-of-type { color: firebrick; }
+
+<!--Задание
+Т.к. цвет текста для ссылок не наследуется, то задай ссылке цвет green, используя класс в качестве селектора-->
+
+.list { padding-left: 0; list-style: none; color: green; } .list-link { color:
+green; }
+
+<!--Задание
+Подключите в правильном порядке файлы стилей, расположенных в папке css:
+
+css/modern-normalize.css
+css/style.css-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css/modern-normalize.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body></body>
+</html>
+
+<!--Задание
+В формате rgb, используя только значения от 0 до 255:
+
+задай классу box белый цвет текста и черный фон
+задай классу red максимально красный фон
+задай классу green максимально зеленый фон
+задай классу blue максимально синий фон-->
+
+.box { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); } .red {
+background-color: rgb(255, 0, 0); } .green { background-color: rgb(0, 255, 0); }
+.blue { background-color: rgb(0, 0, 255); }
+
+<!--Задание
+В сокращенном hex формате
+
+задай классу box белый цвет текста и черный фон;
+задай классу red максимально красный фон;
+задай классу green максимально зеленый фон;
+задай классу blue максимально синий фон.-->
+
+.box { background-color: #000; color: #fff; } .red { background-color: #f00 }
+.green { background-color: #0f0 } .blue { background-color: #00f }
+
+<!--Задание
+Сделай цвет текста контрастным - добавь белый цвет в формате hsl для классов lightness-25 и lightness-0-->
+
+.lightness { width: 50px; height: 50px; line-height: 50px; margin: 0.5rem;
+text-align: center; border: 1px solid gold; } .lightness-100 { background-color:
+hsl(0, 100%, 100%); } .lightness-75 { background-color: hsl(0, 100%, 75%); }
+.lightness-50 { background-color: hsl(0, 100%, 50%); } .lightness-25 {
+background-color: hsl(0, 100%, 25%); color: hsl(100, 100%, 100%); } .lightness-0
+{ background-color: hsl(0, 100%, 0%); color: hsl(100, 100%, 100%); }
+
+<!--Задание
+Задай свойство opacity селекторам .opacity:hover и .opacity:focus так, чтобы прозрачность отсутствовала.
+Задай свойству background-color селекторам .transparent:hover и .transparent:focus значение - именованный цвет прозрачности.-->
+
+.container { padding: 1rem; background-color: navy; } .box { width: 200px;
+height: 50px; margin: 1rem auto; color: #fff; font-size: 24px; line-height:
+50px; text-align: center; cursor: pointer; background-color: orchid; border: 4px
+solid gold; } .opacity { opacity: .5; } /* Напиши код под этой строкой */
+.opacity:hover, .opacity:focus { opacity: 1; } .transparent:hover,
+.transparent:focus { background-color: transparent; }
+
+<!--Задание
+Задай свойству background-color селектору [data-color="rgba"]:hover значение - полупрозрачный цвет в формате rgba вместо заданного в формате rgb.
+Задай свойству background-color селектору [data-color="hsla"]:hover значение - полупрозрачный цвет в формате hsla вместо заданного в формате hsl.
+Задай свойству background-color селектору [data-color="hexa"]:hover значение - полупрозрачный цвет в формате hexa вместо заданного в формате hex.-->
+[data-color] { padding: 0.5rem 1.5rem; border: none; background-color: #008;
+color: #fff; font-size: 1.5rem; } [data-color="rgba"]:hover { background-color:
+rgba(0, 0, 136, .5); } [data-color="hsla"]:hover { background-color: hsla(240,
+100%, 27%, .5); } [data-color="hexa"]:hover { background-color: #00008a80; }
