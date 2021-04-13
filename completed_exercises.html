@@ -641,3 +641,339 @@ word-spacing: -.25rem; } .item-normal { word-spacing: normal; }
 Обрати внимание на наследование этого свойства.-->
 .items { letter-spacing: .25rem; } /* Напиши код под этой строкой */ .item-less
 { letter-spacing: -.1rem; } .item-normal { letter-spacing: normal; }
+
+
+<!--BLOCK 5-->
+
+<!--Задание
+Задай элементу с классом child ширину, равную половине ширины родительского элемента.
+
+Обрати внимание на разное поведение блочных и строчных элементов при изменении значения ширины в css правиле.
+Следует запомнить три правила, которые необходимо вспоминать при изменении размещения элемента на странице с помощью css:
+
+Значение высоты (height) для любых элементов браузер вычисляет на основе высоты контента.
+Значение ширины (width) для элементов со значениями display равными inline или inline-block вычисляет на основе ширины контента.
+Значение ширины (width) для элементов со значением display равным block равно 100% ширины (width) родительского элемента.
+При размещении блоков content box действует особая "гравитация" - все элементы стремятся "упасть" вверх в левый угол.
+
+Точкой отсчета для построения прямоугольника content box является верхний левый угол.
+
+Внимание
+Размещать блочные элементы внутри строчных запрещено.-->
+
+.parent {
+  background: teal;
+  margin-bottom: 1rem;
+}
+
+.child {
+  background: salmon;
+  width: 50%;
+}
+
+<!--Задание
+Задай элементу с классом child минимальную ширину, равную 200px.
+
+Обрати внимание на разное поведение блочных и строчных элементов при изменении значения ширины в css правиле.-->
+
+.parent {
+  background: teal;
+  margin-bottom: 1rem;
+}
+
+.child {
+  width: 2%;
+  min-width: 200px;
+  background: salmon;
+}
+
+<!--Задание
+Задай элементу с классом child максимальную ширину, равную 200px.
+
+Обрати внимание на разное поведение блочных и строчных элементов при изменении значения ширины в css правиле.-->
+
+.parent {
+  background: teal;
+  margin-bottom: 1rem;
+}
+
+.child {
+  width: 90%;
+  max-width: 200px;
+  background: salmon;
+}
+
+<!--Задание
+Задай элементу с классом parent
+
+минимальную высоту, равную 30px;
+отступ на нижней стороне элемента в 1rem (отступ от соседнего элемента).
+Обрати внимание на отсутствие на веб-странице элемента с высотой 0 и его появление при задании значения свойству min-height.-->
+
+.parent {
+  background: teal;
+  min-height: 30px;
+  margin-bottom: 1rem;
+}
+
+.child {
+  background: salmon;
+}
+
+<!--Задание
+Замени значение height на min-height у элемента с классом card.
+
+Обрати внимание на то как min-height исправил ситуацию с переполнением контента.-->
+
+.card {
+  background: teal;
+  width: 200px;
+  min-height: 300px;
+}
+
+<!--Задание
+Измени css свойства родительского элемента (элемента с классом parent) так, чтобы появились отступы от края до элемента-потомка, но ширина родительского элемента при этом осталась прежней. Для этого:
+
+С помощью padding задай отступы в 1rem. Для описания значения padding используй самую короткую запись из одного значения.
+
+Убедись, что геометрия (ширина) элемента с классом parent увеличилась на 2rem (за счет добавления ширины padding). Верни общую ширину блока к начальному значению, уменьшив content box с помощью изменения значения свойства box-sizing.
+
+Перестал вмещаться контент? Замени у родителя и потомка свойство height на min-height.-->
+
+.parent {
+  width: 200px;
+  min-height: 150px;
+  padding: 1rem;
+  background-color: teal;
+  box-sizing: border-box;
+}
+
+.child {
+  min-height: 150px;
+  background-color: goldenrod;
+}
+
+<!--Theory
+  нельзя задать значение в процентах только для border;
+для padding и margin процент берется только от значения width вне зависимости от того какой из сторон задается значение;
+width берет проценты от ширины родительской width;
+height берет проценты от высоты родительской height.
+  Задание
+Для элемента с классом child задайте с помощью процентов
+ширину в половину от ширины родительского элемента;
+высоту в половину от высоты родительского элемента;
+padding-left в процентах (чтобы получился эквивалент 20px);
+margin-top в процентах (чтобы получился эквивалент 40px).
+Т.к. высота в процентах отсчитывается только от заданной высоты, то замени свойство min-height у элемента с классом parent на свойство height.-->
+
+.parent {
+  width: 200px;
+  height: 300px;
+  background-color: teal;
+  box-sizing: border-box;
+}
+
+.child {
+  border: 1px solid #fff;
+  width: 50%;
+  height: 50%;
+  padding-left: 10%;
+  margin-top: 20%;
+  background-color: goldenrod;
+}
+
+.inner {
+  background: red;
+  height: 100%;
+}
+
+<!--Задание
+Для элемента с классом parent задай верхнюю границу в 1px стиля solid прозрачного (transparent) цвета.
+
+Убедитесь, что выпадение вертикального отступа исчезло.-->
+
+
+.parent {
+  width: 200px;
+  height: 300px;
+  border-top: 1px solid transparent;
+  background-color: teal;
+  box-sizing: border-box;
+}
+
+.child {
+  width: 50%;
+  height: 50%;
+  border: 1px solid #fff;
+  padding-left: 10%;
+  margin-top: 20%;
+  background-color: goldenrod;
+}
+.inner {
+  background: red;
+  height: 100%;
+}
+
+<!--Выпадение вертикального отступа и margin-collaps можно предотвратить, если придерживаться следующей тактики присваивания padding и margin:
+
+родительскому элементу задавать padding вместо того, чтобы задавать дочернему элементу margin;
+родительскому элементу не задавать margin-top, но задавать margin-bottom верхнему соседу.
+Задание
+Для элемента с классом child
+удали свойство margin-top;
+добавь свойство padding-top со значением 40px родительскому элементу.
+Для элемента с классом parent добавь нижний отступ в 20px.
+
+Обрати внимание, что никаких побочных эффектов от применения вертикальных значений margin не наблюдается.-->
+
+.parent {
+  width: 200px;
+  height: 300px;
+  background-color: teal;
+  box-sizing: border-box;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+.child {
+  width: 50%;
+  height: 50%;
+  border: 1px solid #fff;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: goldenrod;
+}
+
+<!--Задание
+Добейся размещения по 4 элемента с классом box в один ряд. Для этого
+
+измени font-size элементу с классом container;
+задай font-size элементу с классом box, со значением 1rem (это значение font-size задано body).-->
+
+body {
+  font-size: 20px;
+}
+/* 
+  ширина container 360  
+  или 4 раза по 90  
+*/
+.container {
+  width: 360px;
+  margin: auto;
+  padding-top: 15px;
+  background: burlywood;
+  font-size: 0;
+}
+
+/* 
+  ширина box 15 + 60 + 15
+  или 90  
+*/
+.box {
+  width: 60px;
+  margin: 0 15px 15px;
+  height: 75px;
+  line-height: 75px;
+  background-color: teal;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+<!--Задание
+Добейся размещения по 3 элемента с классом box в один ряд с расстоянием от края в 15px и расстоянием между соседними элементами в 30px. Для этого задай одно свойство margin со значениями
+
+0 для верхнего отступа (его заменяет padding-top родителя);
+15px для нижнего отступа;
+15px для левого и правого отступа.-->
+
+body {
+  font-size: 20px;
+}
+/* 
+  ширина container 480  
+  или 3 раза по 160  
+*/
+.container {
+  width: 480px;
+  margin: auto;
+  padding-top: 15px;
+  background: burlywood;
+  font-size: 0;
+}
+
+/* 
+  ширина box x + 130 + x
+  или 160  
+*/
+.box {
+  width: 130px;
+  height: 75px;
+  line-height: 75px;
+  background-color: teal;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  margin: 0 15px 15px;
+}
+
+<!--Задание
+Добейся размещения по 3 элемента с классом box в один ряд с расстоянием от края в 0 и расстоянием между соседними элементами в 30px (сумма margin-left и margin-right). Для этого задай
+
+margin-left: 0 для 1-го, 4-го, 7-го и 10-го элемента;
+margin-right: 0 для 3-го, 6-го, 9-го и 12-го элемента;
+margin-bottom: 0 для 10-го, 11-го и 12-го элемента.-->
+
+body {
+  font-size: 20px;
+}
+
+/* 
+  2 * 15 - это размер, 
+  который box-sizing: border-box 
+  отнял у width и height
+
+  ширина container 480  - (2 * 15)
+  или 3 раза по 160 - (2 * 15)  
+*/
+.container {
+  width: 480px;
+  margin: auto;
+  padding: 15px;
+  background: burlywood;
+  font-size: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  ширина box x + 130 + x
+  или 160  
+  за исключением крайних элементов
+*/
+.box {
+  width: 130px;
+  margin: 0 15px 15px;
+  height: 75px;
+  line-height: 75px;
+  background-color: teal;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+
+}
+
+.box:nth-of-type(3n+1) {
+  margin-left: 0;
+}
+
+.box:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.box:nth-last-of-type(-n+3) {
+  margin-bottom: 0;
+}
+
