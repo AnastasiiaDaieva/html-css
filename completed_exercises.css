@@ -93,7 +93,12 @@ teal; color: white; }
 
 Обрати внимание на то что у div приоритет изменился и стал более высоким чем у инлайн. */
 
-div { background-color: navy!important; color: white !important; } .warning {
+div { 
+  background-color: navy!important; 
+  color: white !important; 
+} 
+
+.warning {
 background-color: white; color: red; } #inline { background-color: red; color:
 white; }
 
@@ -847,3 +852,431 @@ body {
   .box-left {
   margin-right: auto;
   }
+
+  /* BLOCK 7 */
+
+  /* Задание
+Заполните элемент с классом container фоновым изображением (свойство background-image), которое расположено по ссылке ./hands-typing.jpg. Изображение должно заполнить всю высоту элемента (свойство background-size) и находиться по центру (свойство background-position). */
+
+.container {
+  max-width: 200px;
+  height: 240px;
+  margin: auto;
+  background-color: hsla(0,0%,0%,.1);
+  background-image: url('./hands-typing.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Задание
+Элемент с классом container имеет фоновое изображение, которое находиться по центру (свойство background-position) .
+
+Изображение должно заполнить всю ширину элемента (свойство background-size) и не повторяться (свойство background-repeat). */
+
+.container {
+  max-width: 200px;
+  height: 240px;
+  margin: auto;
+  background-color: hsla(0, 0%, 0%, 0.1);
+  background-image: url(./hands-typing.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+/* Задание
+Элемент с классом container-fluid имеет фоновое изображение, которое находится по центру (свойство background-position) и не повторяeтся (свойство background-repeat).
+
+Изображение должно заполнить всю высоту и, насколько это возможно, всю ширину элемента (свойство background-size). */
+.container-fluid {
+  height: 200px;
+  background-size: cover;
+  background-image: url(./hands-typing.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  max-width: 480px;
+  height: 100%;
+  margin: auto;
+  padding-top: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+/* Задание
+В html есть элементы с атрибутом data-clip с разными значениями. Эти атрибуты выступают в качестве селекторов.
+
+Примени значения атрибута data-clip в качестве значения для свойства background-clip. Для свойства text используй запись с вендорным префиксом и только затем обычную запись правила.
+
+Обрати внимание на то, как изменяется отображение фона (цвета и изображения) в элементе. */
+
+<ul class="items">
+  <li class="item"></li>  
+  <li class="item" data-clip="padding-box"></li>  
+  <li class="item" data-clip="content-box"></li>  
+  <li class="item text" data-clip="text">
+    Текст
+  </li>  
+</ul>  
+
+.text {
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  color: transparent;
+}
+.items {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  width: 240px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 10px dashed orangered;
+  margin: 0 auto 1rem;
+  background-color: hsla(0, 0%, 0%, .1);
+  background-image: url(./hands-typing.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+[data-clip="padding-box"] {
+  background-clip: padding-box;
+}
+[data-clip="content-box"] {
+  background-clip: content-box;
+}
+[data-clip="text"] {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Изображение img
+Замещаемый строчный элемент
+
+Тег img имеет два обязательных атрибута - src и alt. Атрибут alt содержит текст и в силу того что файл html загружается раньше, чем файлы, содержащиеся в ссылках кода html, текст будет отображен первым.
+
+Затем браузер подгрузит изображение по ссылке src и заменит (заместит) текст изображением. Это создает множество нежелательных побочных эффектов.
+
+В этом задании мы рассмотрим прием, который избавляет от ряда таких нежелательных эффектов. Суть приема заключается в размещении изображения внутри блочного элемента и изменения у изображения значения display с inline на block.
+
+Задание
+Изображение размещается внутри элементов с классом wrp-image для которого задан размер меньший, чем размер изображения. У изображения есть класс images. Размести изображение внутри элемента с классом wrp-image так, чтобы изображение занимало 100% ширины родительского элемента и не имело отступа с border-bottom.
+
+Для этого создай правило css с селектором-классом images и двумя свойствами:
+
+width;
+display. */
+
+.container {
+  display: flex;
+  padding-top: 15px;
+}
+.wrp-image {
+  width: 240px;
+  border: 1px solid gold;
+  margin: 0 15px 15px;
+} 
+
+.images {
+  width: 100%;
+  display: block;
+}
+
+/* Задание
+Элементу img надо задать размер меньший, чем размер изображения, и, к тому же, в другой пропорции. При этом необходимо сохранить пропорции изображения ценой того, что часть фотографии не будет отображаться.
+
+Для этого задай элементу с классом images
+
+свойство width со значением 240px;
+свойство height со значением 320px;
+свойство object-fit со значением cover. */
+
+.container {
+  display: flex;
+  padding-top: 15px;
+}
+.images {
+  border: 1px solid gold;
+  margin: 0 15px 15px;
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Псевдоэлементы
+Псевдоэлементы имеют такой же приоритет, как и элементы (теги) в качестве селекторов.
+
+Псевдоэлемент ::before по умолчанию имеет значение inline свойства display и находится перед элементом.
+
+Псевдоэлемент ::after по умолчанию имеет значение inline свойства display и располагается после элемента.
+
+Обязательным для пслевдоэлементов является свойство content.
+
+Если в качестве значения свойства content используется юникод, то синтаксис юникода должен быть в формате для css, а не для html.
+
+Задание
+Есть спецсимвол для открывающей кавычки (\275D) и для закрывающей (\275E).
+
+Для класса cite задайте два css свойства с псевдоэлементами ::before и ::after так, чтобы текст внутри элемента с классом cite на веб-странице был обернут в кавычки - вначале открывающей и в конце закрывающей. */
+
+<p class="cite">Кавычки для цитаты</p>
+
+.cite::before {
+  content: '\275D';
+}
+
+.cite::after {
+  content: '\275E';
+}
+
+/* NOTE TO SASHA: Синтаксис линейного градиента должен обязательно содержать цвет и необязательные параметры: - tangled/confusing (ex. 8 in block 7) */
+
+/* Задание
+Задан линейный градиент для фона элемента body. Т.к. в html документе нет контента, то надо задать высоту. Напомним, что высота элементов и body в том числе, всегда определяется высотой контента. Но блочным элементам высоту можно задать.
+
+Добавь к значениям свойства linear-gradient дополнительно:
+
+направление и угол фона в -45deg;
+75% длины для цвета hsl(270, 100%, 30%). */
+
+body { 
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+      hsl(0, 100%, 30%), 
+      hsl(270, 100%, 30%) 75%
+    );
+  }
+
+  /* Линейный градиент.
+Перечисление градиентов и повтор линейного градиента.
+
+К одному фону можно применить несколько линейных градиентов, перечисляя их через запятую. При этом градиенты могут пересекаться и накладываться один на другой. Например:
+
+<div class="box"></div>
+.box {
+  width: 200px;
+  height: 100px;
+  background: 
+  linear-gradient(90deg,
+      red 50px,  transparent 50px 100%) ,
+  linear-gradient(
+      orange 50px, transparent 50px 100%);
+     ;
+}
+Если есть необходимость в повторении линейного градиента в фоне, то можно использовать другое свойство - repeating-linear-gradient. Пример:
+
+<div class="container"></div>
+.container {
+  width: 200px;
+  height: 100px;
+  background: repeating-linear-gradient(
+      orange 1px, transparent 2px, transparent 20px);
+     ;
+}
+Перечисление нескольких линейных градиентов применимо и к repeating-linear-gradient. Рассмотрим этот случай в задании.
+
+Задание
+Фон body оформлен в виде листа в линейку. Оформи фон в виде листа в клеточку. Для этого
+
+через запятую добавь то же самое свойство  repeating-linear-gradient;
+
+используй то же самое значение, добавив к нему только поворот на 90deg. */
+
+body {
+  min-height: 100vh;
+  background: 
+    repeating-linear-gradient(
+      #bbb 1px, transparent 2px, transparent 28px), 
+    repeating-linear-gradient( 90deg, #bbb 1px, transparent 2px, transparent 28px);
+  
+}
+  
+
+/* TO SASHA: ex 10 block 7: Тень элемента
+Значения box-shadow имеет два варианта (для внешней и внутренней тени):
+
+смещение-по-x смещение-по-y размытие распространение цвет. -wtf? */
+
+/* Тень элемента
+Значения box-shadow имеет два варианта (для внешней и внутренней тени):
+
+смещение-по-x смещение-по-y размытие распространение цвет.
+inset смещение-по-x смещение-по-y размытие распространение цвет.
+Где
+
+Смещение-по-x (x-offset) означает смещение тени по горизонтали относительно блока. Может принимать как положительные, так и отрицательные значения, положительное - смещает тень вправо от блока, отрицательное – влево. Обязательное значение.
+Смещение-по-y (y-offset) означает смещение тени по вертикали относительно блока. Может принимать как положительные, так и отрицательные значения, положительное - смещает тень вниз, отрицательное - вверх. Обязательное значение.
+Размытие (blur) определяет радиус размытия тени. Чем больше радиус, тем сильнее размыта тень. Можно использовать только положительные значения. Необязательное значение.
+Распространение (spread) расширяет тень, утолщая ее. Принимает как положительные, так и отрицательные значения. Необязательное значение.
+Цвет (color) необязательное значение. По умолчанию тень черного цвета. Для задания значения можно использовать hex, rgb, rgba форматы записи цвета.
+inset - создаёт тень внутри блока.
+Задание
+Элементу button с классом btn задано свойство box-shadow.
+
+Необходимо добавить также это свойство с другими значениями для события hover и focus и отдельно для события active. Для этого:
+
+в коде css добавь свойство box-shadow к уже готовым селекторам с псевдоклассами состояний hover, focus и active;
+для hover и focus значения смещение-по-x, смещение-по-y, размытие и распространение равны 1px, а цвет - черный с прозрачностью в .3, т.е. hsla(0,0%,0%,.3);
+для active значения смещение-по-x, смещение-по-y, размытие и распространение равны 3px, а цвет - черный с прозрачностью в .3, т.е. hsla(0,0%,0%,.3). Также для active тень должна быть внутренней, т.е. с использованием значения inset; */
+
+.controls {
+  padding: 1rem;
+  text-align: center;
+}
+.btn {
+  padding: .5rem 1.75rem;
+  border: none;
+  background: linear-gradient( hsl(120, 100%, 35%) , hsl(120, 100%, 20%));
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px 3px hsla(0,0%,0%,.1);
+}
+.btn:hover,
+.btn:focus {
+   box-shadow: 1px 1px 1px 1px hsla(0,0%,0%,.3);
+}
+
+.btn:active {
+   box-shadow: inset 3px 3px 3px 3px hsla(0,0%,0%,.3);
+
+}
+
+/* Задание
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0"
+  xmlns="http://www.w3.org/2000/svg" overflow="hidden">
+  <defs>
+    <symbol id="icon-pen" viewBox="0 0 32 32">
+      <path d="M12 20l4-2 14-14-2-2-14 14-2 4zM9.041 27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435 12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435 4z"></path>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 32 32">
+      <path  d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path>
+    </symbol>
+    <symbol id="icon-delete" viewBox="0 0 32 32">
+      <path d="M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18 4h-4v-2h4v2z"></path>
+    </symbol>
+  </defs>
+</svg>
+В html документе, внутри элемента div, размещены три svg иконки из спрайта. Задай цвет изображениям svg по цвету текста родительского элемента div. Цвет иконок должен меняться на orangered и при наведении курсора на div.
+
+Для этого
+
+селектору класса icon задай css свойство fill со значением currentColor;
+Убедись, что цвет иконок меняется вместе с цветом текста также и при наведении курсора на элемент div. */
+
+div {
+  color: green;
+  background-color: #eee;
+  font-size: 24px;
+}
+
+.icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+
+}
+
+div:hover {
+  color: orangered;
+}
+
+/* Для svg спрайтов используется следующий прием. Селектору задается css переменная со значением currentColor, что означает текущий цвет родителя. Затем эта переменная переносится в спрайт и добавляется атрибуту fill вместе со значением по умолчанию. Например :
+
+.icon {
+  --color: currentColor;
+}
+Спрайт:
+
+<path fill="var(--color, #000)" d="M12 20l4-2 14-14-2-2-14 14-2 4zM9.041 27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435 12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435 4z"></path>   
+Задание
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0"
+  xmlns="http://www.w3.org/2000/svg" overflow="hidden">
+  <defs>
+    <symbol id="icon-pen" viewBox="0 0 32 32">
+      <path fill="var(--icon-color, #000)" d="M12 20l4-2 14-14-2-2-14 14-2 4zM9.041 27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435 12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435 4z"></path>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 32 32">
+      <path fill="var(--icon-color, #000)" d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path>
+    </symbol>
+    <symbol id="icon-delete" viewBox="0 0 32 32">
+      <path fill="var(--icon-color, #000)" d="M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18 4h-4v-2h4v2z"></path>
+    </symbol>
+  </defs>
+</svg>
+В файле sprite-with-fill.svg используется css переменная --icon-color. Сделай так, чтобы svg иконка с классом link-icon меняла цвет вместе с цветом текста ссылки элемента с классом link.
+
+Для этого в селекторе link-icon объяви переменную --icon-color и задай этой переменной значение, при котором бы наследовался цвет от родителя . */
+
+.link {
+  text-decoration: none;
+  color: green;
+  font-family: sans-serif;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+.link-icon {
+  margin-right: 0.5rem;
+  --icon-color: currentColor;
+}
+.link:hover {
+  color: orangered;
+}
+
+/* SVG
+Смена фона для sprite иконок
+
+Иконки, как правило, имеют прозрачный фон. Поэтому, в качестве фона, используется фон ближайшего родительского элемента. Поэтому, нет необходимости изменять фон для sprite - достаточно позаботиться о смене цвета для иконок, а фон менять только у родительского элемента.
+
+Задание
+Задайте hover для смены цвета svg иконок и фона.
+
+Для этого:
+
+селектору класса link задайте цвет текста с помощью переменной --accent;
+
+селектору класса link-icon  задайте переменную --icon-color со значением, необходимым для получения цвета текста родительского элемента;
+
+селектору класса link c псевдоклассом :hover задайте цвет текста с помощью переменной --primay; */
+
+:root {
+  --primay: burlywood;
+  --accent: cadetblue;
+}
+.items {
+  list-style: none;
+  display: flex;
+}
+.item {
+  margin: .25rem;
+}
+.link {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--primay);
+  color: var(--accent);
+
+}
+.link-icon {
+  --icon-color: currentColor;
+
+}
+.link:hover {
+  background-color: var(--accent);
+  color: var(--primay);
+  
+}
