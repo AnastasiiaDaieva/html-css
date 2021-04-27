@@ -1280,3 +1280,472 @@ div:hover {
   color: var(--primay);
   
 }
+
+/* BLOCK 9 */
+
+/* Задание
+Элемент с классом box надо переместить вниз и вправо на 50%. Для этого
+
+измени свойство position на absolute;
+задай начало отсчета и направление с помощью свойств left и top со значением в 50%;
+Убедись что
+
+смещение происходит относительно левого верхнего угла элемента, т.к. именно он попадает в заданную точку - центр прямоугольника;
+при смещении элемента, вместе с ним перемещаются его потомки: элемент span и текст. */
+
+.container {
+  width: 480px;
+  height: 240px;
+  margin: 1rem auto;
+  background: 
+  /* верхний фон */
+  linear-gradient(26.3deg, 
+  /* черный прозрачностью .2 */
+    hsla(0, 0%, 0%, .2), 
+    hsla(0, 0%, 0%, .2) 50%, 
+    transparent 50%, 
+    transparent),
+    /* нижний фон */
+  linear-gradient(153.3deg,
+    teal, 
+    teal 50%, 
+    slategray 50%, 
+    slategray);
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  --size: 50px;
+  width: var(--size);
+  height: var(--size);
+  background-color: orange;
+  display: flex;
+  /* Напиши код под этой строкой */
+
+}
+
+/*
+  центрируем элемент при
+  родителе под flex
+ */
+span {
+  margin: auto;
+}
+
+/* Задание
+Для двух элементов, расположенных среди других элементов, задайте смещение вниз и вправо на 2rem. Для этого:
+
+Для элемента с классом by-position задайте свойство position: relative и затем осуществите смещение свойствами top и left.
+
+Для элемента с классом by-margin осуществите смещение свойствами margin-top и margin-left.
+
+Убедись, что элемент со свойством position: relative при смещении не изменил положение соседних элементов. */
+
+body {
+  font-family: sans-serif;
+}
+h2 {
+  text-align: center;
+}
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  width: 350px;
+  margin: .5rem auto;
+  padding: .75rem .5rem .25rem;
+  border-radius: 1rem;
+  background-color: teal;
+
+  /* удаляем пробелы между inline-block */
+  font-size: 0;
+}
+.box {
+  display: inline-block;
+  width: 100px;
+  margin: 0 .5rem .5rem;
+  border-radius: .5rem;
+  color: #fff;
+  background-color: orange;
+
+  /* восстанавливаем видимость текста */
+  font-size: 18px;
+  
+  /* центрируем текст */
+  --h: 2rem;
+  height: var(--h);
+  line-height: var(--h);
+  text-align: center;
+}
+
+/* Напиши код под этой строкой */
+.by-position {
+  position: relative;
+  top: 2rem;
+  left: 2rem;
+  background-color: palevioletred;
+
+}
+.by-margin {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  background-color: lightskyblue;
+
+}
+
+/* Задание
+Для двух элементов, расположенных среди других элементов, задайте смещение на 2rem на все 4-ре стороны. Для этого:
+
+Для элемента с классом by-position задайте свойство position: relative и затем осуществите смещение свойствами top, left, bottom и right.
+
+Для элемента с классом by-margin осуществите смещение свойством margin и значением 2rem.
+
+Убедись, что элемент со свойством position: relative при смещении проигнорировал значения bottom и right. */
+
+body {
+  font-family: sans-serif;
+}
+h2 {
+  text-align: center;
+}
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  width: 350px;
+  margin: .5rem auto;
+  padding: .75rem .5rem .25rem;
+  border-radius: 1rem;
+  background-color: teal;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.box {
+  width: 100px;
+  margin: 0 .5rem .5rem;
+  border-radius: .5rem;
+  color: #fff;
+  background-color: orange;
+  font-size: 18px;
+  
+  /* центрируем текст */
+  --h: 2rem;
+  height: var(--h);
+  line-height: var(--h);
+  text-align: center;
+}
+
+.by-position {
+  position: relative;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: palevioletred;
+
+}
+.by-margin {
+  margin: 2rem;
+  background-color: lightskyblue;
+
+}
+
+/* Задание
+В html коде есть элементы с атрибутом id и значениями up и down. На каждый такой элемент создана ссылка - с классом up и якорем href="#up", и классом down и якорем href="#down". Эти ссылки используются для навигации по странице - перехода к элементам с соответствующим id по клику на ссылку.
+
+Размести ссылки так, чтобы при вертикальной прокрутке окна браузера ссылки оставались неподвижными на своих местах (одна - в верхнем, вторая - в нижнем углу в 3rem от краев).
+
+Для этого:
+
+элементу с классом up задай свойства top и left со значением 3rem;
+элементу с классом down задай свойства bottom и right со значением 3rem;
+элементу с классом page-nav задай свойства position с подходящим значением. */
+
+:root {
+  --s: 50px;
+}
+
+body {
+  font-size: 24px;
+  text-align: center;
+  font-family: sans-serif;
+  background: linear-gradient(hsl(189, 100%, 85%), hsl(224, 75%, 25%));
+}
+
+main {
+ height: 200vh;
+}
+
+footer {
+  color: #fff
+}
+
+a {
+  width: var(--s);
+  height: var(--s);
+  line-height: var(--s);
+  text-decoration: none;
+  font-size: 36px;
+  display: inline-block;
+  color: #fff;
+  border-radius: 1rem;
+  background-color: firebrick;
+}
+
+/* Напиши код под этой строкой */
+.page-nav {
+  position: fixed;
+
+}
+
+.up {
+  top: 3rem;
+  left: 3rem;
+
+}
+
+.down {
+  bottom: 3rem;
+  right: 3rem;
+
+}
+
+/* Задание
+Элемент с классом modal надо разместить на всю ширину и высоту экрана с темным полупрозрачным фоном. По центру этого элемента надо разместить другой элемент с классом box. Для этого элементу с классом modal:
+
+Удали у свойства display значение none. Это разместит modal в DOM и браузер начнет применять css свойства.
+
+Добавь свойству display значение flex. Тогда потомок - элемент с классом box имея значение margin: auto будет находиться по центру родительского элемента.
+
+Задай черный полупрозрачный цвет фону с помощью background-color: hsla(0, 0%, 0%, .5);.
+
+Задай свойство position и значение fixed.
+
+Растяни элемент на всю ширину экрана, задав свойствам left, rigth, top и bootom значение 0.
+
+Отцентрируй элемент с селектором класса box, задав свойство margin со значением auto. Обрати внимание, что если элемент находится под действием родительского свойства flex, то свойство auto выравнивает не только по ширине, но и по высоте родительского элемента.
+
+Обрати внимание на то что ссылка находится под элементом с классом modal и в результате стала недоступной для клика. */
+
+body {
+  height: 200vh;
+  background: linear-gradient(hsl(189, 100%, 85%), hsl(224, 75%, 25%));
+  text-align: center;
+}
+
+.box {
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  width: 360px;
+  height: 200px;
+  background-color: #fff;
+  cursor: initial;
+/* Добавь свойство под этой строкой */
+  margin: auto;
+}
+  
+
+.btn,
+.box {
+  cursor: pointer;
+}
+
+.modal {
+  cursor: not-allowed;
+/* Измени код под этой строкой */
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+   background-color: hsla(0, 0%, 0%, .5);
+  position: fixed;
+}
+
+/* Position: sticky.
+Неподвижный header
+Техника неподвижный header основана на том CSS правиле position: fixed, что и при создании модального окна. Но в технике неподвижный header используется ряд отличий:
+
+не задается значение свойству bottom;
+элементу задается высота;
+элементу задается z-index больше, чем у других элементов, например больше чем у элементов с position: sticky.
+Sticky (липкий)
+Значение sticky свойства position:
+
+соединяет поведение элементов при значениях fixed и absolute;
+поддерживает только свойство top, т.е. не поддерживается bottom, left и right;
+свойство top требует обязательно задать начальное значение (например 0).
+Задание
+Есть несколько списков с названиями тегов. У каждого списка первым элементом идет li с классом letter и текстом, содержащим букву, с которой начинается теги в этом списке. Надо сделать так, чтобы при прокрутке списков вниз буква каждого списка прижималась к header и оставалась в таком положении до тех пор, пока теги из этого списка видны на экране.
+
+Для этого элементам с классом letter:
+
+добавь свойство position со значением sticky;
+задай обязательное начальное значение top по высоте header (т.е. 40px);
+убедись в том что элементы с классом letter при некоторых условиях ведут себя как position со значением fixed. */
+
+.container {
+  padding-top: 40px;
+  width: 480px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fff;
+  box-shadow: 2px 2px 6px 3px hsla(0, 0%, 0%, .2);
+
+/* Неподвижный header */
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 20;
+}
+
+h1 {
+  margin: auto;
+}
+
+.letter {
+  height: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  border-radius: 3px;
+  list-style-type: none;
+  line-height: 2rem;
+  text-align: center;
+  color: #d00;
+  background: navajowhite;
+  /* Напиши код под этой строкой */
+  position: sticky;
+  top: 40px;
+
+}
+
+/* Absolute
+Положение элемента с position: absolute
+Если не заданы top, right, bottom или left, то элемент занимает верхний левый угол контентной области родителя (т.е. такой элемент будет учитывать padding или border ближайшего родительского элемента).
+
+Если какое-то значение из top, right, bottom или left задано, то от сторон ближайшего предка с position отличным от static (элемент не будет учитывать padding или border).
+
+Если нет предков с position, отличным от static, то отсчет ведется от body.
+
+Относительные размеры у элементов с position: absolute
+Размеры элемента с position: absolute, заданные в относительных единицах зависят от контекста (от размеров ближайшего relative элемента).
+
+Задание
+Задай элементам с классом box свойство top со значением 0 и убедись в том что элементы нашли ближайшего предка с position: relative или body и расположились в нем как в родительском элементе.
+
+Задай элементам с классом box свойство width со значением 100%
+и убедись в том что элементы заняли всю ширину своего нового родительского элемента с position: relative или body . */
+
+:root {
+  --s: 1.5rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding-top: 1rem;
+}
+.container-outer {
+  margin: 1rem 0 0;
+  padding: .5rem 0;
+  width: 75%;
+  background-color: mediumseagreen;
+}
+.container {
+  background-color: slateblue;
+  padding: .5rem 0;
+  width: 50%;
+  height: var(--s);
+}
+.psr {
+  position: relative;
+}
+.box {
+  border-radius: 2rem;
+  height: var(--s);
+  line-height: var(--s);
+  background-color: crimson;
+  text-align: center;
+  position: absolute;
+  /* Напиши код под этой строкой */
+  top: 0;
+  width: 100%;
+
+}
+
+/* z-index
+z-index изменяет положение элемента по оси Z, где ось Z - линия перпендикулярная экрану монитора.
+
+Значение z-index по умолчанию не задано (условно равно 0) для всех элементов.
+
+Для свойства z-index допустимы отрицательные значения.
+
+Запомнить:
+z-index действует на соседей.
+z-index не действует на потомков.
+Задание
+Надо изменить порядок отображения элементов по оси, перпендикулярной экрану монитора. При этом надо убедиться, что z-index не действует на потомков.
+
+Для этого:
+
+Элементу с классом inner задай свойство z-index: 100 и убедись, что эти элементы не перекрываются никакими другими элементами (т.к. у всех остальных элементов значение z-index не задано).
+
+Расположите элементы с классом alfa, beta и gamma в таком порядке
+
+alfa выше всех соседей, со значением 30 свойства z-index;
+beta находится по средине, со значением 20 свойства z-index;
+gamma ниже всех соседей, со значением 10 свойства z-index.
+Убедитесь, что элементы с классом inner теперь частично перекрыты, т.е. z-index не действует на потомков. */
+
+.box {
+  display: flex;
+  --s: 60px;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  position: absolute;
+}
+.inner {
+  margin: auto;
+  --s: 30px;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background-color: orange;
+  z-index: 100;
+
+}
+.alfa {
+  background-color: crimson;
+  top:30px;
+  left: 5px;
+  z-index: 30;
+
+}
+.beta {
+  background-color: slateblue;
+  left: 25px;
+  z-index: 20;
+
+}
+.gamma {
+  top:30px;
+  left: 45px;
+  background-color: mediumseagreen;
+  z-index: 10;
+
+}
