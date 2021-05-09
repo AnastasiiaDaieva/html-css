@@ -313,3 +313,158 @@ NOTE FOR SASHA: widows in task #17-->
 </html>
 
 
+<!-- BLOCK 11 -->
+
+<!-- Задание
+В редакторе html есть элемент input. Задайте этому элементу три атрибута со своими значениями:
+
+атрибут type и значение text;
+атрибут name и значение login;
+атрибут placeholder и значение Enter login:. -->
+
+<input type="text" name="login" placeholder="Enter login:"/>
+
+<!-- Задание
+Перемести span так, чтобы этот элемент был слева от input. Убедись, что текст теперь отображается также слева от input. -->
+
+<label>
+  <span>Login</span><input type="text" name="login" placeholder=" " />
+  
+</label>
+
+<!-- Задание
+Т.к. внутри одной веб-страницы нельзя размещать более одного элемента input вне элемента form, то оберните элементы в html редакторе этим элементом.
+
+Элементу form задайте три атрибута:
+
+атрибут autocomplete со значением off;
+атрибут method со значением POST;
+атрибут action со значением javascript:void(0);.
+Перед закрытием тега form вставьте элемент button с текстом Submit и атрибутом type со значением submit. -->
+
+
+<form autocomplete="off" method="POST" action="javascript:void(0);">
+  <label>
+    <span>Login</span>
+    <input type="text" name="login" placeholder=" " />
+  </label>
+  <label>
+    <span>Password</span>
+    <input type="password" name="password" placeholder=" " />
+  </label>
+  <button  type="submit">Submit</button>
+</form>
+
+<!-- Задание
+Из-за наличия пробельного символа между открывающим и закрывающим тегом textarea содержимое атрибута placeholder не отображается.
+
+Удали пробелы (или переносы) между открывающим и закрывающим тегом textarea. -->
+
+<form autocomplete="off" method="POST" action="javascript:void(0);">
+  <label for="id-comment">Comment</label>
+  <textarea id="id-comment" name="comment" placeholder="Share your opinion:"></textarea>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+<!-- Задание
+В готовой разметке html задай:
+
+Элементам с value="black" атрибут disabled.
+Элементам с value="green" атрибут checked.
+Убедись что у элементов с type="radio" можно выбрать только один элемент, а у элементов с type="checkbox" - все элементы, кроме тех что имеют атрибут disabled.
+
+Убедись, что кнопка Обновить возвращает выделение элемента с заданным атрибутом checked. -->
+
+<div class="container">
+  <section>
+    <h4>Choose only one value</h4>
+    <form action="javascript:void(0);" id="id-radio">
+      <div>
+        <label for="id-red">red</label>
+        <label for="id-green">green</label>
+        <label for="id-blue">blue</label>
+        <label for="id-black">black</label>
+      </div>
+      <div>
+        <input id="id-red" name="colors" type="radio" value="red" />
+        <input id="id-green" name="colors" type="radio" value="green" checked/>
+        <input id="id-blue" name="colors" type="radio" value="blue" />
+        <input id="id-black" name="colors" type="radio" value="black" disabled/>
+      </div>
+    </form>
+    <button form="id-radio" type="submit">Submit</button>
+    <button form="id-radio" type="reset">Reset</button>
+  </section>
+  <section>
+    <h4>Choose multiple values</h4>
+    <form action="javascript:void(0);" id="id-checkbox">
+      <div>
+        <label for="red">red</label>
+        <label for="green">green</label>
+        <label for="blue">blue</label>
+        <label for="black">black</label>
+      </div>
+      <div>
+        <input id="red" name="colors" type="checkbox" value="red" />
+        <input id="green" name="colors" type="checkbox" value="green" checked/>
+        <input id="blue" name="colors" type="checkbox" value="blue" />
+        <input id="black" name="colors" type="checkbox" value="black" disabled/>
+      </div>
+    </form>
+    <button form="id-checkbox" type="submit">Submit</button>
+    <button form="id-checkbox" type="reset">Reset</button>
+  </section>
+</div>
+<!-- Задание
+Есть список опций, которые надо разделить на три группы. Для этого оберни option элементом optgroup в таком порядке:
+
+option с атрибутом value="frontend" должен быть обернут элементом с атрибутом label, имеющим значение Developer;
+
+option с атрибутами value и значениями html, css и js должен быть обернут элементом с атрибутом label, имеющим значение Base skills;
+
+option с атрибутами value и значениями vue, react и angular должен быть обернут элементом с атрибутами label, имеющим значение Frameworks и disabled.
+
+Убедись что атрибут disabled не дает возможность выбирать значение для всех option группы. -->
+
+<form action="javascript:void(0);">
+  <select>
+    <optgroup label="Developer">
+          <option value="frontend">Frontend</option>
+    </optgroup>
+    <optgroup label="Base skills">
+          <option value="html" selected>HTML</option>
+          <option value="css">CSS</option>
+          <option value="js">JavaScript</option>
+    </optgroup>
+    <optgroup label="Frameworks" disabled>
+          <option value="vue">Vue</option>
+          <option value="react">React + GraphQL</option>
+          <option value="angular">Angular</option>
+  </select>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+<!-- Задание
+При вводе в элемент input букв, содержащихся в названиях текста элементов option (например буквы o) должен появляться список для выбора.
+
+Убедись, что пока такой список не появляется. Исправь это следующим образом:
+
+элементу input добавь атрибут list со значением browsers;
+элементу datalist добавь атрибут id со значением browsers.
+Убедись, что при вводе букв появляется список тех option, текст которых содержит эти буквы. -->
+
+<form action="javascript:void(0);">
+  <label for="myBrowser">Browser selection</label>
+  <input id="myBrowser" name="myBrowser" list="browsers"/>
+  <datalist id="browsers">
+      <option>Chrome</option>
+      <option>Firefox</option>
+      <option>Internet Explorer</option>
+      <option>Opera</option>
+      <option>Safari</option>
+      <option>Microsoft Edge</option>
+  </datalist>
+</form>
+
